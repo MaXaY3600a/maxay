@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaXaY Арбитраж</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3d3bff, #00b4d8);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #3d3bff;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 50px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .button {
+            background-color: #3d3bff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #00b4d8;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 30px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            margin: 0 0 20px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content .button {
+            margin-top: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>MaXaY Арбитраж</h1>
+        <nav>
+            <a href="#" onclick="showPage('main-page')">Главная</a>
+            <a href="#" onclick="showPage('ideas-page')">Идеи</a>
+            <a href="#" onclick="showPage('base-page')">База</a>
+            <a href="#" onclick="showPage('publications-page')">Публикации</a>
+            <button class="button" onclick="openModal('login-modal')">Войти</button>
+            <button class="button" onclick="openModal('register-modal')">Регистрация</button>
+        </nav>
+    </header>
+
+    <main id="main-page" class="container">
+        <h2>Добро пожаловать в MaXaY Арбитраж</h2>
+        <p>MaXaY Арбитраж — это инновационная платформа...</p>
+        <div class="card">
+            <h3>Ваш профиль</h3>
+            <p>Никнейм: <strong>Maxim</strong></p>
+            <p>
+                Аккаунты: 
+                <em>Telegram</em> 
+                <a href="https://telegram.org/">
+                    <img width="40" height="40" src="https://img.icons8.com/color/40/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <em>TikTok</em> 
+                <a href="https://www.tiktok.com/">
+                    <img width="40" height="40" src="https://img.icons8.com/color/40/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+            </p>
+            <button class="button">Настроить профиль</button>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login-modal')">&times;</span>
+            <h2>Войти</h2>
+            <input type="text" placeholder="Введите логин">
+            <input type="password" placeholder="Введите пароль">
+            <button class="button">Войти</button>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('register-modal')">&times;</span>
+            <h2>Регистрация</h2>
+            <input type="text" placeholder="Введите логин">
+            <input type="email" placeholder="Введите email">
+            <input type="password" placeholder="Введите пароль">
+            <button class="button">Зарегистрироваться</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('main').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        function addIdea() {
+            const ideasContainer = document.getElementById('ideas-container');
+            const newIdea = document.createElement('div');
+            newIdea.classList.add('card');
+
+            newIdea.innerHTML = `
+                <h3 contenteditable="true">Новая идея</h3>
+                <p contenteditable="true">Описание новой идеи...</p>
+            `;
+            ideasContainer.appendChild(newIdea);
+        }
+
+        function uploadVideo() {
+            const videoList = document.getElementById('video-list');
+            const videoCard = document.createElement('div');
+            videoCard.classList.add('card');
+
+            videoCard.innerHTML = `
+                <h4>Загруженное видео</h4>
+                <p>Теги: #тег1, #тег2</p>
+            `;
+            videoList.appendChild(videoCard);
+        }
+    </script>
+</body>
+</html>
