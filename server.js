@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root', // ваш логин
     password: '', // ваш пароль
-    database: 'maxy_arbitrage' // имя вашей базы данных
+    database: 'maxay_arbitrage' // имя вашей базы данных
 });
 
 db.connect(err => {
