@@ -5,12 +5,12 @@ const mysql = require('mysql');
 const app = express();
 const port = 3000;
 
-// Подключение к базе данных MySQL
+// Подключение к sql
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // ваш логин
-    password: '', // ваш пароль
-    database: 'maxay_arbitrage' // имя вашей базы данных
+    user: 'root',
+    password: '', 
+    database: 'maxay_arbitrage' 
 });
 
 db.connect(err => {
@@ -22,7 +22,7 @@ db.connect(err => {
 });
 
 app.use(bodyParser.json());
-app.use(express.static('public')); // Папка с фронтендом
+app.use(express.static('public')); //Фронт
 
 // Маршрут для логина
 app.post('/login', (req, res) => {
@@ -39,7 +39,7 @@ app.post('/login', (req, res) => {
     });
 });
 
-// Запуск сервера
+
 app.listen(port, () => {
     console.log(`Сервер запущен на порту ${port}`);
 });
